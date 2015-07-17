@@ -7,11 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 
-raise if node['platform'] == 'windows'
+fail if node['platform'] == 'windows'
+fail if node['solr']['exhibitor_url'].nil?
 
-Chef::Log.warn("template #{node['solr-search']}")
-
+include_recipe 'gdp-base-linux'
 include_recipe 'java'
-include_recipe 'iptables'
-include_recipe 'firewall'
+include_recipe 'build-essential'
+include_recipe 'python'
 include_recipe 'solr'
+include_recipe 'datadog_support::solr'
