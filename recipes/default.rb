@@ -12,7 +12,6 @@ fail if node['solr']['exhibitor_url'].nil?
 
 include_recipe 'gdp-base-linux'
 include_recipe 'java'
-include_recipe 'build-essential'
 include_recipe 'python'
 include_recipe 'solr'
 include_recipe 'datadog_support::solr'
