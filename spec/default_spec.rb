@@ -28,10 +28,6 @@ describe 'solr-search::default' do
     expect(chef_run).to include_recipe('java')
   end
 
-  it 'includes the recipe build-essential' do
-    expect(chef_run).to include_recipe('build-essential')
-  end
-
   it 'includes the recipe python' do
     expect(chef_run).to include_recipe('python')
   end

@@ -39,10 +39,10 @@ normal['solr']['install_examples'] = false
 normal['solr']['log_dir'] = '/opt/solr/server/logs'
 normal['solr']['log_file'] = '/opt/solr/server/logs/solr.log'
 normal['solr']['data_dir'] = '/opt/solr/server'
-# override heapsize as needed in scalr
+# override heapsize/java opts as needed in scalr
 default['solr']['heapsize'] = '1g'
-normal['solr']['java_options'] = '-Djava.awt.headless=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.port=7199'
+default['solr']['java_options'] = '-Djava.awt.headless=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.port=7199'
 normal['solr']['computed_java_options'] = "%{zkoptions} -m #{node['solr']['heapsize']} #{node['solr']['java_options']}"
-normal['solr']['appdynamics_enabled'] = false
-# required - override exhibitor_url in scalr
+default['solr']['appdynamics_enabled'] = false
+# override required in scalr
 default['solr']['exhibitor_url'] = nil
